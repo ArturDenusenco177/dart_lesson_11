@@ -1,0 +1,3 @@
+void streams() {
+  print('streams');
+}

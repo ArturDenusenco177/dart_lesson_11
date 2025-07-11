@@ -1,5 +1,7 @@
-import 'package:dart_lesson_11/dart_lesson_11.dart' as dart_lesson_11;
+import 'package:dart_lesson_11/future/hw_futures.dart';
+import 'package:dart_lesson_11/streams/hw_streams.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${dart_lesson_11.calculate()}!');
+  futures();
+  streams();
 }
