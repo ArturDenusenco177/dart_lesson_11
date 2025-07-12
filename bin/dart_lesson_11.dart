@@ -37,7 +37,19 @@ Future<void> main() async {
 
   //4
   print('------------------- Task 4 -------------------');
-  
+  stopwatch.reset();
+  stopwatch.start();
+  final listFuture = await Future.wait([
+    fetchName(),
+    fetchAge(),
+  ]);
+
+  print('Моє ім\'я: ${listFuture[0]}');
+  print('Мені ${listFuture[1]} $year.');
+  stopwatch.stop();
+  print('Час виконання: ${stopwatch.elapsedMicroseconds} мікросекунд');
+
+
 }
 
 // Варіант 2: Використання then
