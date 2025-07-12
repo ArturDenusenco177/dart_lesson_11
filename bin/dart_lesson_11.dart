@@ -3,9 +3,32 @@ import 'package:dart_lesson_11/future/hw_futures.dart';
 
 // Варіант 1: Використання async/await
 Future<void> main() async{
+   print('------------------- Task 1 -------------------');
+  //1
   final futureName = await fetchName();
   print('Моє ім\'я: ${futureName}');
-  
+
+  //2
+  print('------------------- Task 2 -------------------');
+ final futureAge = await fetchAge();
+  String year;
+  int lastDigit = futureAge % 10;
+  int lastTwoDigits = futureAge % 100;
+
+  if (lastDigit == 1 && lastTwoDigits != 11) {
+    year = 'рік';
+  } else if ([2, 3, 4].contains(lastDigit) &&
+      !(lastTwoDigits >= 12 && lastTwoDigits <= 14)) {
+    year = 'роки';
+  } else {
+    year = 'років';
+  }
+
+  print('Мені $futureAge $year.');
+
+  //3
+  print('------------------- Task 3 -------------------');
+
 }
 
 // Варіант 2: Використання then
