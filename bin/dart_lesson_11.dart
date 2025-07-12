@@ -1,5 +1,5 @@
 import 'package:dart_lesson_11/future/hw_futures.dart';
-//import 'package:dart_lesson_11/streams/hw_streams.dart';
+import 'package:dart_lesson_11/streams/hw_streams.dart';
 
 // Варіант 1: Використання async/await
 Future<void> main() async {
@@ -39,15 +39,25 @@ Future<void> main() async {
   print('------------------- Task 4 -------------------');
   stopwatch.reset();
   stopwatch.start();
-  final listFuture = await Future.wait([
-    fetchName(),
-    fetchAge(),
-  ]);
+  final listFuture = await Future.wait([fetchName(), fetchAge()]);
 
   print('Моє ім\'я: ${listFuture[0]}');
   print('Мені ${listFuture[1]} $year.');
   stopwatch.stop();
   print('Час виконання: ${stopwatch.elapsedMicroseconds} мікросекунд');
+
+  //5
+  print('------------------- Task 5 -------------------');
+  final taim = await delayedCountdown(5);
+  print(taim);
+
+  //6
+  print('------------------- Task 6 -------------------');
+  await streamSix();
+
+  //7
+  print('------------------- Task 7 -------------------');
+  
 
 
 }
