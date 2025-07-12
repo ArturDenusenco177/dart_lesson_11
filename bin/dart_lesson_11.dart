@@ -2,15 +2,18 @@ import 'package:dart_lesson_11/future/hw_futures.dart';
 //import 'package:dart_lesson_11/streams/hw_streams.dart';
 
 // Варіант 1: Використання async/await
-Future<void> main() async{
-   print('------------------- Task 1 -------------------');
+Future<void> main() async {
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+
+  print('------------------- Task 1 -------------------');
   //1
   final futureName = await fetchName();
   print('Моє ім\'я: ${futureName}');
 
   //2
   print('------------------- Task 2 -------------------');
- final futureAge = await fetchAge();
+  final futureAge = await fetchAge();
   String year;
   int lastDigit = futureAge % 10;
   int lastTwoDigits = futureAge % 100;
@@ -28,7 +31,13 @@ Future<void> main() async{
 
   //3
   print('------------------- Task 3 -------------------');
+  stopwatch.stop();
+  print('Час виконання: ${stopwatch.elapsedMicroseconds} мікросекунд');
+  print('Послідовне виконання завершено');
 
+  //4
+  print('------------------- Task 4 -------------------');
+  
 }
 
 // Варіант 2: Використання then
